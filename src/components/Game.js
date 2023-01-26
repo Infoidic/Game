@@ -144,37 +144,44 @@ export const Game = () => {
 			player.move(0, SPEED)
 		})
 
-		// Add enemies
-		for (let i = 0; i < 3; i++) {
-			const x = k.rand(0, k.width())
-			const y = k.rand(0, k.height())
-
-			k.add([
-				k.sprite('ghosty'),
-				k.pos(x, y),
-				// Both objects must have area() component to enable collision detection between
-				k.area(),
-				'enemy',
-			])
-		}
-
+		k.add([
+			k.sprite('ghosty'),
+			k.pos(200, 250),
+			// Both objects must have area() component to enable collision detection between
+			k.area(),
+			'enemy',
+		])
+		k.add([
+			k.sprite('ghosty'),
+			k.pos(100, 190),
+			// Both objects must have area() component to enable collision detection between
+			k.area(),
+			'enemy',
+		])
 		k.add([
 			k.sprite('grass'),
-			k.pos(k.center()),
+			k.pos(350, 340),
 			k.area(),
 			// This game object also has solid(), so our player won't be able to move pass this
 			k.solid(),
 		])
 		k.add([
 			k.sprite('vertical'),
-			k.pos(180, 100),
+			k.pos(430, 450),
+			k.area(),
+			// This game object also has solid(), so our player won't be able to move pass this
+			k.solid(),
+		])
+		k.add([
+			k.sprite('vertical'),
+			k.pos(650, 450),
 			k.area(),
 			// This game object also has solid(), so our player won't be able to move pass this
 			k.solid(),
 		])
 		k.add([
 			k.sprite('horizontal'),
-			k.pos(450, 430),
+			k.pos(430, 650),
 			k.area(),
 			// This game object also has solid(), so our player won't be able to move pass this
 			k.solid(),
